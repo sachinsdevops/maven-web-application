@@ -25,6 +25,13 @@ pipeline {
 				sh 'cp -r /root/.jenkins/workspace/web_app_pipeline/target/maven-web-application.war /root/apache-tomcat-9.0.89/webapps'
 				}
 			}
+			
+		stage ('deploy') {
+			steps {
+				sh 'sh function.sh'
+				sh 'ls'
+				}
+			}
 		
 		}
 	}
