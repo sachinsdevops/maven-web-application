@@ -26,7 +26,7 @@ pipeline {
 				}
 			}
 			
-		stage ('deploy') {
+		stage ('shell') {
 			steps {
 				sh 'sh function.sh'
 				sh 'ls'
