@@ -1,37 +1,23 @@
 pipeline {
-	agent any
+	agent any 
 	
 	stages {
-		stage ('compile') {
+		stage('compile') {
 			steps {
-				sh 'mvn clean compile'
+				sh 'mvn compile'
 				}
 			}
-		
-		stage ('test') {
+			
+		stage('Test') {
 			steps {
 				sh 'mvn test'
 				}
 			}
 			
-		stage ('package') {
+		stage('clean_package') {
 			steps {
 				sh 'mvn clean package'
 				}
 			}
-		
-		stage ('deploy') {
-			steps {
-				sh 'cp -r /root/.jenkins/workspace/web_app_pipeline/target/maven-web-application.war /root/apache-tomcat-9.0.89/webapps'
-				}
-			}
-			
-		stage ('shell') {
-			steps {
-				sh 'sh function.sh'
-				sh 'ls'
-				}
-			}
-		
 		}
-	}
+    }	
