@@ -4,19 +4,19 @@ pipeline {
 	stages {
 		stage('compile') {
 			steps {
-				sh 'mvn compile'
+				sh 'compile'
 				}
 			}
 			
 		stage('Test') {
 			steps {
-				sh 'mvn test'
+				sh 'test'
 				}
 			}
 			
 		stage('clean_package') {
 			steps {
-				sh 'mvn clean package'
+				sh 'clean package'
 				}
 			}
 		}
